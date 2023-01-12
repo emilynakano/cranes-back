@@ -24,5 +24,5 @@ Route.get('/', async () => {
   return { hello: 'world' }
 })
 
-Route.post('/auth/sign-up', 'AuthController.register')
-Route.post('/auth/sign-in', 'AuthController.authenticate')
+Route.post('/auth/sign-up', 'AuthController.register').middleware('schema:register')
+Route.post('/auth/sign-in', 'AuthController.authenticate').middleware('schema:login')
